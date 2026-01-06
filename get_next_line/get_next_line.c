@@ -2,25 +2,21 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
-	+:+     */
-/*   By: kwafi <kwafi@student.42.fr>                +#+  +:+      
-	+#+        */
-/*                                                +#+#+#+#+#+  
-	+#+           */
-/*   Created: 2025/12/30 19:06:52 by kwafi             #+#    #+#             */
-/*   Updated: 2025/12/30 19:06:52 by kwafi            ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kwafi <kwafi@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/06 18:17:07 by kwafi             #+#    #+#             */
+/*   Updated: 2026/01/06 18:17:07 by kwafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <unistd.h>
 
-
 char	*ft_read_to_left_str(int fd, char *left_str)
 {
-	char *buff;
-	int rd_bytes;
+	char	*buff;
+	int		rd_bytes;
 
 	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
@@ -43,8 +39,8 @@ char	*ft_read_to_left_str(int fd, char *left_str)
 
 char	*get_next_line(int fd)
 {
-	char *line;
-	static char *left_str;
+	char		*line;
+	static char	*left_str;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
